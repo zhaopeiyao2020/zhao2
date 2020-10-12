@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 200px;
+
+            position: relative;
+            animation: size 1s infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes size{
+            0%{transform: scale(0.3) rotate(45deg);}
+            100%{transform: scale(0.8) rotate(45deg);}
+        }
+        .wrap::before,
+        .wrap::after{
+            content: '';
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: pink;
+            position: absolute;
+        }
+        .wrap::before{
+            top: -100px;
+            left: 0;
+        }
+        .wrap::after{
+            top: 0;
+            left: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap"></div>
+</body>
+</html>
